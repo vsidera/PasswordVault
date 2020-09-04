@@ -10,6 +10,12 @@ def create_user(login,loginkey):
         new_user = User(login,loginkey)
         return new_user
 
+def save_user(user):
+        '''
+        Function to save credentials
+        '''
+        user.save_user()
+
 def save_credentials(credentials):
         '''
         Function to save credentials
@@ -41,14 +47,24 @@ def main() :
         login = input()
         print("set a password")
         loginkey = input()
-
-        print(f"Great !What would you like to do { login }?")
-        print('\n')
         
-        while True:
-                    print("Choose a short code : ca - create a new credential, dc - display credentials, fc -find credential, ex -exit credential list ")
+        save_user(create_user(login, loginkey))
 
-                    short_code = input().lower()
+        print(f"Great!{login}, please enter your password again to login.")
+        confirm = input()
+        if confirm == loginkey:
+            print("\n You are successfully logged in!")
+        
+        # print("Great!Please proceed to login")
+        # print("Enter username")
+
+        # print(f"Great !What would you like to do { login }?")
+        # print('\n')
+        
+        # while True:
+        #             print("Choose a short code : ca - create a new credential, dc - display credentials, fc -find credential, ex -exit credential list ")
+
+        #             short_code = input().lower()
 
 
 if __name__ == '__main__':

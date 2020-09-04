@@ -17,6 +17,14 @@ class User :
         self.login = login
         self.loginkey = loginkey
 
+    def save_user(self):
+
+        """
+        save_credentials method saves contact objects into contact_list
+        """
+
+        User.user_list.append(self)    
+
 #Credentials class
 class Credentials :
     """
@@ -35,8 +43,7 @@ class Credentials :
         """
         self.account = account
         self.username = username
-        self.password = password     
-
+        self.password = password        
 
     def save_credentials(self):
 
