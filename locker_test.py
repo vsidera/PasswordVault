@@ -16,6 +16,12 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user = User("vik","P@pi") # create user object
         self.new_credentials = Credentials("facebook","sidera","Fr1day") #create credentials object
+    
+    def tearDown(self):
+        """
+        tearDown method that does clean up after each test case has run.
+        """
+        Credentials.credentials_list = []   
 
     def test_init(self):
         '''
