@@ -31,12 +31,27 @@ class TestUser(unittest.TestCase):
 
 
     def test_save_credentials(self):
-        '''
+        """
         test_save_credentials test case to test if the credentials object is saved into
          the credential list
-        '''
-        self.new_credentials.save_credentials() # saving the new contact
+        """
+        self.new_credentials.save_credentials() # saving the new credentials
         self.assertEqual(len(Credentials.credentials_list),1)    
-        
+
+    def test_display_credentials(self):
+        """
+        method that returns a list of all credentials saved
+        """
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+
+    def test_delete_credentials(self):
+        """
+        test_delete_credentials test case to test if the credentials object is deleted from
+         the credential list
+        """    
+        self.new_credentials.save_credentials() # saving the new credentials
+        self.new_credentials.delete_credentials() #deleting credentials
+        self.assertEqual(len(Credentials.credentials_list),0)
+         
 if __name__ == '__main__':
     unittest.main()    

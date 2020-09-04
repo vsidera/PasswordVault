@@ -40,8 +40,21 @@ class Credentials :
 
     def save_credentials(self):
 
-        '''
-        save_contact method saves contact objects into contact_list
-        '''
+        """
+        save_credentials method saves contact objects into contact_list
+        """
 
         Credentials.credentials_list.append(self)   
+
+    def delete_credentials(self):
+        """
+        delete_credentials method deletes contact objects from contact_list
+        """
+        Credentials.credentials_list.remove(self)
+
+    @classmethod
+    def display_credentials(cls):
+        '''
+        method that returns the credentials list
+        '''
+        return cls.credentials_list
