@@ -33,3 +33,24 @@ def display_credentials():
         Function that returns all the saved contacts
         '''
         return Credentials.display_credentials()  
+
+#MAINFUNCTION
+
+def main() :
+        print("Hi!This is Password Vault.Set a username")
+        login = input()
+        print("set a password")
+        loginkey = input()
+
+        print(f"Great !What would you like to do { login }?")
+        print('\n')
+        
+        while True:
+                    print("Choose a short code : ca - create a new credential, dc - display credentials, fc -find credential, ex -exit credential list ")
+
+                    short_code = input().lower()
+
+
+if __name__ == '__main__':
+
+        main()
