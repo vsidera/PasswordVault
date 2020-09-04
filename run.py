@@ -122,6 +122,13 @@ def main() :
                                 del_credentials(find_credentials(account))
                                 print("-"*10)
                                 print("The account has been deleted successfully")
+
+                        elif short_code == "ex":
+                                print("See you later")
+                                break
+                        else:
+                                print("I really didn't get that. Please use the short codes")
+
 if __name__ == '__main__':
 
         main()
