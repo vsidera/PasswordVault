@@ -99,6 +99,22 @@ def main() :
                                         print("You dont seem to have any accounts saved yet")
                                         print('\n')
 
+                        elif short_code == 'sa':
+
+                                print("Enter the account you want to search for")
+
+                                account = input()
+                                if find_credentials(account):
+                                        account = find_credentials(account)
+                                        print(f"{account.username} {account.password}")
+                                        print('-' * 10)
+
+                                        # print(f"username.......{find_credentials.username}")
+                                        # print(f"password.......{find_credentials.password}")
+                                else:
+                                        print("That contact does not exist")
+
+
 if __name__ == '__main__':
 
         main()
