@@ -124,10 +124,14 @@ def main() :
                                 print("The account has been deleted successfully")
 
                         elif short_code == "ex":
-                                print("See you later")
+                                print("See you later :)")
                                 break
                         else:
                                 print("I really didn't get that. Please use the short codes")
+
+        else:
+                print("-"*10)
+                print("\nSorry,Wrong password.Try again")                        
 
 if __name__ == '__main__':
 
