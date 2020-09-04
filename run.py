@@ -79,7 +79,7 @@ def main() :
                             username = input()
                             print("Create password")
                             password = input()
-                            save_credentials(create_credentials(account, u_name, passwd))
+                            save_credentials(create_credentials(account, username, password))
                             print ('\n')
                             print(f"New account: {account} added \n Username: {username} --- Password:{password}")
                             print ('\n')
