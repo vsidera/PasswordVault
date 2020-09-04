@@ -67,7 +67,7 @@ def main() :
          
             while True:
                         print("-"*10)
-                        print("What would you like to do? \n Pick a short code : \n \t\t aa - Add an account & create your password \n \t\t ga - Generate a password for your new account \n \t\t da - display saved accounts \n \t\t sa - Search for an account \n \t\t D - delete an account \n \t\t ex - Exit the locker room ")
+                        print("What would you like to do? \n Pick a short code : \n \t\t aa - Add an account & create your password \n \t\t ga - Generate a password for your new account \n \t\t dc - display saved accounts \n \t\t sa - Search for an account \n \t\t D - delete an account \n \t\t ex - Exit the locker room ")
                         short_code = input().lower()
         
                         if short_code == 'aa':
@@ -83,6 +83,21 @@ def main() :
                             print ('\n')
                             print(f"New account: {account} added \n Username: {username} --- Password:{password}")
                             print ('\n')
+
+                        elif short_code == 'dc':
+
+                                if display_credentials():
+                                        print("Here is a list of all your accounts")
+                                        print('\n')
+
+                                        for credentials in display_credentials():
+                                                print(f"{credentials.account} {credentials.username} .....{credentials.password}")
+
+                                        print('\n')
+                                else:
+                                        print('\n')
+                                        print("You dont seem to have any accounts saved yet")
+                                        print('\n')
 
 if __name__ == '__main__':
 
