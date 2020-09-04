@@ -114,7 +114,14 @@ def main() :
                                 else:
                                         print("That contact does not exist")
 
-
+                        elif short_code == 'd':
+                            print("-"*10)
+                            print("Enter the account you would like to delete")
+                            account = input()
+                            if find_credentials(account):
+                                del_credentials(find_credentials(account))
+                                print("-"*10)
+                                print("The account has been deleted successfully")
 if __name__ == '__main__':
 
         main()
