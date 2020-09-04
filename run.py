@@ -29,6 +29,13 @@ def save_credentials(credentials):
         '''
         credentials.save_credentials()
 
+def generate_password():
+    '''
+    function to generate a password
+    '''
+    random_password = Credentials.password_generate()
+    return random_password        
+
 def del_credentials(credentials):
         '''
         Function to delete a contact
@@ -82,6 +89,19 @@ def main() :
                             save_credentials(create_credentials(account, username, password))
                             print ('\n')
                             print(f"New account: {account} added \n Username: {username} --- Password:{password}")
+                            print ('\n')
+                        
+                        elif short_code == 'ga':
+                            print("-"*10)
+                            print("Ente account name")
+                            account = input()
+                            print("Enter username")
+                            username = input()
+                            print("...........")
+                            password = generate_password()
+                            save_credentials(create_credentials(account, username, password))
+                            print ('Your account has been created successfully!\n')
+                            print(f"New account: {account} \n Username: {username} --- Password:{password}")
                             print ('\n')
 
                         elif short_code == 'dc':

@@ -1,3 +1,5 @@
+import random;
+
 class User :
     """
     Class that creates new instances of user
@@ -32,7 +34,7 @@ class Credentials :
     """
     credentials_list = [] # Empty credentials list
 
-    def __init__(self,account,username,password):
+    def __init__(self,account,username,password=None):
 
         """
         __init__ method that helps us define properties for our objects.
@@ -43,7 +45,7 @@ class Credentials :
         """
         self.account = account
         self.username = username
-        self.password = password        
+        self.password = password if password else Credentials.password_generate()       
 
     def save_credentials(self):
 
@@ -58,6 +60,17 @@ class Credentials :
         delete_credentials method deletes contact objects from contact_list
         """
         Credentials.credentials_list.remove(self)
+
+    @classmethod
+    def password_generate(cls):
+        '''
+        class method to generate a random password
+        '''
+        password_length = 8
+        possible_characters = "@abcdefghijklmnopqrstuvwxyz-1234567890&ABCDEFGHIJKLMNOPQRSTUVWXYZ!" 
+        random_character = [random.choice(possible_characters) for i in range(password_length)]
+        auto_password = "".join(random_character)
+        return auto_password    
 
     @classmethod
     def display_credentials(cls):
