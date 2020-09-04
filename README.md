@@ -7,7 +7,7 @@ On Average, a person has at least 7 different accounts he or she has signed into
 * On your terminal, clone this repo using git
 * $ git clone https://github.com/vsidera/PasswordVault
 * $ cd PasswordVault
-Run the Application
+* Run the Application
 * $ chmod +x run.py
 * $ ./run.py
 * You will be required to create a username and password and then login to be able to interact with the functionalities
