@@ -44,14 +44,6 @@ class TestUser(unittest.TestCase):
         self.new_credentials.save_credentials() # saving the new credentials
         self.assertEqual(len(Credentials.credentials_list),1)   
 
-    def test_generate__password(self):
-        '''
-        test method to test auto generation of passwords
-        '''
-        self.new_credentials.save_credentials()
-        another_account = Credentials("Instagram", "2000")
-        another_account.save_credentials()     
-
     def test_display_credentials(self):
         """
         method that returns a list of all credentials saved

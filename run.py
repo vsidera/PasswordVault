@@ -38,19 +38,19 @@ def generate_password():
 
 def del_credentials(credentials):
         '''
-        Function to delete a contact
+        Function to delete a credential
         '''
         credentials.delete_credentials()
 
 def find_credentials(account):
         '''
-        Function that finds a contact by number and returns the contact
+        Function that finds a credential by number and returns the credential
         '''
         return Credentials.find_by_account(account)
 
 def display_credentials():
         '''
-        Function that returns all the saved contacts
+        Function that returns all the saved credentials
         '''
         return Credentials.display_credentials()  
 
@@ -67,11 +67,8 @@ def main() :
         print(f"Great!{login}, please enter your password again to login.")
         confirm = input()
         if confirm == loginkey:
-            print("\n You are successfully logged in!")
-        # else:
-        #     print("Sorry,wrong password")  
+            print("\n You are successfully logged in!") 
 
-         
             while True:
                         print("-"*10)
                         print("What would you like to do? \n Pick a short code : \n \t\t aa - Add an account & create your password \n \t\t ga - Generate a password for your new account \n \t\t dc - display saved accounts \n \t\t sa - Search for an account \n \t\t D - delete an account \n \t\t ex - Exit the locker room ")
@@ -128,9 +125,7 @@ def main() :
                                         account = find_credentials(account)
                                         print(f"{account.username} {account.password}")
                                         print('-' * 10)
-
-                                        # print(f"username.......{find_credentials.username}")
-                                        # print(f"password.......{find_credentials.password}")
+                                        
                                 else:
                                         print("That contact does not exist")
 

@@ -22,7 +22,7 @@ class User :
     def save_user(self):
 
         """
-        save_credentials method saves contact objects into contact_list
+        save_credentials method saves user objects into user_list
         """
 
         User.user_list.append(self)    
@@ -50,14 +50,14 @@ class Credentials :
     def save_credentials(self):
 
         """
-        save_credentials method saves contact objects into contact_list
+        save_credentials method saves credentials objects into credentials_list
         """
 
         Credentials.credentials_list.append(self)   
 
     def delete_credentials(self):
         """
-        delete_credentials method deletes contact objects from contact_list
+        delete_credentials method deletes credential objects from credentials_list
         """
         Credentials.credentials_list.remove(self)
 
@@ -66,7 +66,7 @@ class Credentials :
         '''
         class method to generate a random password
         '''
-        password_length = 8
+        password_length = 6
         possible_characters = "@abcdefghijklmnopqrstuvwxyz-1234567890&ABCDEFGHIJKLMNOPQRSTUVWXYZ!" 
         random_character = [random.choice(possible_characters) for i in range(password_length)]
         auto_password = "".join(random_character)
